@@ -1,0 +1,96 @@
+@font-face { 
+	font-family: 'NanumGothicBold';
+  	src: url('font/NanumGothic/NanumGothic-Bold.wott') format('wott');
+}
+@font-face {
+	font-family: 'NanumGothicBold';
+	src: url('font/NanumGothic/NanumGothic-Bold.ttf') format('truetype');
+}
+
+.menu {
+	width: 100%;
+	height: 65px;
+}
+
+.menu>.menu-content {
+	font-family: 'NanumGothicBold',sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: -0.05em;
+	position: absolute;
+	right: 280px;
+	top: 9px;
+	color: #fff;
+}
+
+.menu>.menu-content>a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.arrow-up {
+	width: 0;
+	height: 0;
+	position: absolute;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 20px solid #fff;
+	right: 376px;
+    top: 40px;
+    display: none;
+}
+
+.login-form {
+	position: absolute;
+	width: 300px;
+	height: auto;
+	background: #fff;
+	right: 242;
+	top: 60;
+	border-radius: 3px;
+	border-bottom: 5px solid gray;
+	display: none;
+	z-index: 3;
+}
+
+.login-form>form {
+	width: 250px;
+	margin: 0 auto;
+	letter-spacing: -0.05em;
+	font-family: 'NanumGothicBold',sans-serif;
+	letter-spacing: -0.05em;
+}
+
+input[type="text"],
+input[type="password"] {
+	width: 250px;
+	height: 25px;
+	border: 0px;
+	outline: none;
+	box-shadow: inset 0 0 3px #fcf4f4;
+	border-radius: 5px;
+	margin-top: 5px;
+	font-size: 16px;
+}
+
+input[type="submit"] {
+	width: 95%;
+	height: 35px;
+	background: #e2a62b;
+	font-size: 18px;
+	font-weight: bold;
+	color: #222222;
+	outline: none;
+	border: 0px;
+	border-radius: 3px;
+	letter-spacing: -0.03em;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background: #bd8104;
+}
+
+.fa {
+	margin-right: 5px;
+}

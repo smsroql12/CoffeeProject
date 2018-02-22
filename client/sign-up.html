@@ -1,0 +1,169 @@
+<!DOCTYLE HTML>
+<html>
+<head>
+<title>회원가입</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/home.css">
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<link rel="stylesheet" type="text/css" href="css/generic.css">
+<link rel="stylesheet" type="text/css" href="css/contents.css">
+<link rel="stylesheet" type="text/css" href="css/js-image-slider.css">
+<link rel="stylesheet" type="text/css" href="css/sign-up.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script src="js/js-image-slider.js" type="text/javascript"></script>
+<script src="js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="js/datepicker-ko.js" type="text/javascript"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+</head>
+
+<body>
+<header>
+	<section class="nav-container">
+	<aside class="menu">
+		<div class="menu-content">
+
+			<a href="#" id="login"><i class="fa fa-unlock-alt"></i>Login</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#"><i class="fa fa-question-circle"></i>도움말</a>
+		</div>
+		<div class="arrow-up">
+		</div>
+	</aside>
+	<div class="login-form">
+		<form>
+			<label>&nbsp;</label>
+			<div>
+				<input type="text" placeholder="ID"/>
+			</div>
+			<label style="font-size: 1px;">&nbsp;</label>
+			<div>
+				<input type="password" placeholder="PASSWORD"/>
+			</div>
+			<label>&nbsp;</label>
+			<div>
+				<input type="submit" value="Login"/>
+			</div>
+			<label>&nbsp;</label>
+			<label>&nbsp;</label>
+			<div>
+				<a href="#" style="text-decoration: none; position: relative; top: -6px; font-size: 16px; color: gray;">회원가입</a>&emsp;
+				<a href="#" style="text-decoration: none; position: relative; top: -6px; font-size: 16px; color: gray;">계정을 잃어버렸습니까?</a>
+			</div>
+		</form>
+	</div>
+	</section>
+</header>
+
+<nav>
+<a href=""><img src="../images/coffee.png" alt="Logo" ></a>
+<div class="nav">
+	<ul>
+		<li><a href="#">소개</a></li>
+		<li class="dropdown"><a href="#" class="dropdown-btn">메뉴</a>
+		<div class="dropdown-menu">
+			<a href="#">음료</a>
+			<a href="#">베이커리</a>
+			<a href="#">상품</a>
+		</div>
+		</li>
+		<li><a href="#">주문</a></li>
+		<li><a href="#">커피 이야기</a></li>
+		<li class="dropdown"><a href="#" class="dropdown-btn">마이페이지</a>
+		<div class="dropdown-menu">
+			<a href="#">개인정보관리</a>
+			<a href="#">나의메뉴</a>
+			<a href="#">카드정보</a>
+			<a href="#">캐시충전</a>
+		</div>
+		</li>
+		<li><a href="#">이벤트</a></li>
+	</ul>
+</div>
+</nav>
+
+<section>
+	<form id="info" style="border:1px solid #ccc" method="post" action="/auth/register">
+		<div class="container">
+    <h1>회원 가입</h1>
+    <p>커피 한잔에 오신 것을 진심으로 환영합니다.</p>
+    <hr>
+    <h1>필수 약관동의</h1>
+    <iframe src="de1.html"></iframe>&nbsp;&nbsp;
+    <iframe src="de2.html"></iframe><br><br>
+    <label style="font-size: 20px;">
+      <input type="checkbox" checked="checked" name="agree" style="width: 20px; height: 20px;" required /> <b>필수 약관 내용에 모두 동의합니다.</b>
+    </label>
+    <hr>
+    <label for="id"><b>아이디</b></label><br>
+    <input type="text" class="notHangul" placeholder="사용할 아이디 입력" name="id" maxlength="20" minlength="6" required/>
+    <label class="warn"></label><br>
+
+    <label for="pw"><b>비밀번호</b></label><br>
+    <input class="form-control" id="inputPw" type="password" placeholder="비밀번호 입력" name="pw" maxlength="30" minlength="6" required/>
+    <label class="warn2"></label><br>
+
+    <label for="pwCheck"><b>비밀번호 확인</b></label><br>
+    <input class="form-control" id="inputPwr" type="password" placeholder="비밀번호 재입력" name="pwCheck" maxlength="30" minlength="6" required/>
+    <label class="warn3"></label><br>
+    
+    <label for="email"><b>이메일</b></label><br>
+    <input id="email" type="text" placeholder="" name="emailF" style="width: 15%" required/>&nbsp;&nbsp;@&nbsp;
+    <input type="text" name="emailB" value="" ReadOnly="true" style="width: 15%" required/>
+	<select name="emailS" onchange="SetEmailTail(emailCheck.options[this.selectedIndex].value)">
+    <option value="notSelected" >::선택하세요::</option>
+    <option value="naver.com">naver.com</option>
+    <option value="daum.net">daum.net</option>
+    <option value="yahoo.com">yahoo.com</option>
+    <option value="nate.com">nate.com</option>
+    <option value="gmail.com">gmail.com</option>
+    <option value="hanmail.net">hanmail.net</option>
+    <option value="msn.com">msn.com</option>
+    <option value="etc">직접입력</option>
+   </select><br>
+
+   <hr>
+
+   <label for="name"><b>이름</b></label><br>
+    <input id="name" type="text" placeholder="이름" name="name" style="width: 15%" required/><br>
+    <label for="gender"><b>성별</b></label><br>
+    <input type="radio" name="gender" value="남성" checked="checked">남성
+    <input type="radio" name="gender" value="여성">여성
+    <input type="radio" name="gender" value="기타">기타<br><br>
+    <label for="day"><b>생년월일</b></label><br>
+    <input type="text" readonly="true" id="date1" placeholder="클릭해주세요." name = "date" style="width: 15%" /><br>
+    <label for="cellPhone"><b>핸드폰 번호</b></label><br>
+    <input id="cellPhone" class="phone" type="text" placeholder="숫자만 입력 가능합니다." name="phone" maxlength="13" style="width: 15%" required/>&nbsp;<br>
+    </label>
+
+    <label for="address"><b>주소</b></label><br>
+
+    <input type="text" readonly="true" id="sample2_postcode" name="postNum" placeholder="우편번호" required/>
+	<input type="button" class="adbutton" onclick="sample2_execDaumPostcode()" value="우편번호 찾기"><br>
+	<input type="text" readonly="true" id="sample2_newaddress" name="addressN" placeholder="도로명주소" style="width: 25%" required/>
+	<input type="text" readonly="true" id="sample2_address" name="addressO" placeholder="지번주소" style="width: 25%" required/><br> 
+	<input type="text" id="address" name="addressD" placeholder="상세주소입력" style="width: 25%" required/>
+
+<!-- iOS에서는 position:fixed 버그가 있음, 적용하는 사이트에 맞게 position:absolute 등을 이용하여 top,left값 조정 필요 -->
+<div id="layer" style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
+<img src="//t1.daumcdn.net/localimg/localimages/07/postcode/320/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
+</div>
+
+	<br>
+    <label style="font-size: 17px;">
+      <input type="checkbox" checked="checked" name="remember" style="width: 18px; height: 18px;" required /> <b>정보 활용 제공에 동의합니다.</b>
+    </label>
+    <hr>
+    <p><h4>모든 정보 입력 후, 회원가입 버튼을 누르면 회원가입이 완료됩니다.<h4></p><br><br>
+    	<button class="button" type="submit" id="sign" style="vertical-align:middle"><span>회원가입</span></button>
+    	<script src="js/juso.js" type="text/javascript"></script>
+    	<script src="js/sign-up.js" type="text/javascript"></script>
+</form>
+</section>
+
+<footer>푸터 부분</footer>
+</body>
+</html>
