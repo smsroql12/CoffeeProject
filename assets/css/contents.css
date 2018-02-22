@@ -1,0 +1,53 @@
+@font-face { 
+    font-family: 'NanumGothicBold';
+    src: url('assets/font/NanumGothic/NanumGothic-Bold.wott') format('wott');
+}
+
+@font-face {
+    font-family: 'NanumGothicBold';
+    src: url('assets/font/NanumGothic/NanumGothic-Bold.ttf') format('truetype');
+}
+
+.content-2 {
+	width: 100%;
+	height: 320px;
+}
+
+.con2button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 26px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+.con2button1 {
+    position: relative;
+    left: 58%;
+    top: 205px;
+    background-color: transparent; 
+    color: black; 
+    border: 2px solid #440806;
+    border-radius: 7px;
+    font-family: 'NanumGothicBold',sans-serif;
+}
+
+.con2button1:hover {
+    background-color: #544e39;
+    color: white;
+    text-decoration: underline;
+}
+
+.con2layout {
+    background-image: url('../../images/content2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 320px;
+}
