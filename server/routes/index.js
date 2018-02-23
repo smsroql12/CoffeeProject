@@ -14,11 +14,10 @@ var app = express();
 
 app.use(bodyParser.urlencoded({extended: false}));
 
-router.get('/',function(req,res,next) {
-    res.sendFile((path.resolve('../client/index.html')));
-});
 router.get('/main',function(req,res,next) {
-  res.send('로그인 완료');
+  res.render('main',{
+    sess : req.session.userid
+  });
 });
 router.get('/thanks.html',function(req,res,next) {
   //res.sendFile((path.resolve('../client/index.html')));

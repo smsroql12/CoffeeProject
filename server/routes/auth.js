@@ -13,8 +13,13 @@ var conn = mysql.createConnection({
 var app = express();
 
 app.use(bodyParser.urlencoded({extended: false}));
-router.get('/register',function(req,res,next) {
-  res.send('sessuccec');
+
+router.get('/logout',function(req,res,next) {
+  delete req.session.userid;
+  delete req.session.password;
+  console.log('로그아웃');
+  res.send(`<script>alert('로그아웃 되었습니다. 안녕히가세요'); location.href='/main';</script>`)
+  //res.redirect('/');
 })
 
 router.post('/login',function(req,res,next) {
