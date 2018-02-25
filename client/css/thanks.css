@@ -1,0 +1,73 @@
+@font-face { 
+	font-family: 'NanumGothicBold';
+  	src: url('assets/font/NanumGothic/NanumGothic-Bold.wott') format('wott');
+}
+@font-face {
+	font-family: 'NanumGothicBold';
+	src: url('assets/font/NanumGothic/NanumGothic-Bold.ttf') format('truetype');
+}
+
+section {
+	width: 100%;
+	height: auto;
+}
+
+.thanks2 {
+  height: 700px;
+}
+.thanks {
+	font-family: 'NanumGothicBold',sans-serif;
+	width: 800px;
+	height: auto;
+	margin: 0 auto;
+	position: relative;
+	top: 160px;
+	text-align: center;
+}
+
+.thanks-low {
+	width: 800px;
+	height: 150px;
+	margin: 0 auto;
+}
+
+.button1 {
+  font-family: 'NanumGothicBold',sans-serif;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.button1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button1:hover span {
+  padding-right: 25px;
+}
+
+.button1:hover span:after {
+  opacity: 1;
+  right: 0;
+}

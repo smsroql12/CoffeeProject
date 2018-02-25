@@ -1,10 +1,10 @@
 @font-face { 
 	font-family: 'NanumGothicBold';
-  	src: url('font/NanumGothic/NanumGothic-Bold.wott') format('wott');
+  	src: url('assets/font/NanumGothic/NanumGothic-Bold.wott') format('wott');
 }
 @font-face {
 	font-family: 'NanumGothicBold';
-	src: url('font/NanumGothic/NanumGothic-Bold.ttf') format('truetype');
+	src: url('assets/font/NanumGothic/NanumGothic-Bold.ttf') format('truetype');
 }
 
 .menu {
@@ -61,8 +61,8 @@
 	letter-spacing: -0.05em;
 }
 
-input[type="text"],
-input[type="password"] {
+
+.loginid, .loginpw {
 	width: 250px;
 	height: 25px;
 	border: 0px;
@@ -73,7 +73,7 @@ input[type="password"] {
 	font-size: 16px;
 }
 
-input[type="submit"] {
+.loginsubmit {
 	width: 95%;
 	height: 35px;
 	background: #e2a62b;
@@ -87,9 +87,10 @@ input[type="submit"] {
 	cursor: pointer;
 }
 
-input[type="submit"]:hover {
+.loginsubmit:hover {
 	background: #bd8104;
 }
+
 
 .fa {
 	margin-right: 5px;
