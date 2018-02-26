@@ -19,9 +19,13 @@ router.get('/main',function(req,res,next) {
     sess : req.session.userid
   });
 });
-router.get('/thanks.html',function(req,res,next) {
-  //res.sendFile((path.resolve('../client/index.html')));
-  res.send('hello');
-});
+
+router.post('/purchase',function(req,res,next) {
+  if(req.session.userid == null){
+    res.send('로그인을 해주세요');
+  }else{
+    res.send("구매성공");
+  }
+})
 
 module.exports = router;
