@@ -76,6 +76,7 @@ function updateBill() {
   $('.subtotal .value').text('$ ' + subtotal.toFixed(2));
   $('.salestax .value').text('$ ' + salestax.toFixed(2));
   $('.total .value').text('\u005C ' + total.toLocaleString()).css("font-size","1.6em");
+  $('#totaltext').val(total);
 }
 
 var coffee = {
@@ -341,18 +342,18 @@ $("#subbrioshu").click(function() {
 });
 
 /* 커피 한잔 기본 텀블러 */
-$("#adddetumble").click(function() {
-  coffee.detumble++;
-  $("#detumblecount").val(coffee.detumble);
+$("#adddetumblr").click(function() {
+  coffee.detumblr++;
+  $("#detumblrcount").val(coffee.detumblr);
 });
 
-$("#subdetumble").click(function() {
-  if(coffee.detumble <= 0) {
+$("#subdetumblr").click(function() {
+  if(coffee.detumblr <= 0) {
     swal("T_T","최소 수량은 0보다 작을 수 없습니다.","error");
   }
   else {
-    coffee.detumble--;
-    $("#detumblecount").val(coffee.detumble);
+    coffee.detumblr--;
+    $("#detumblrcount").val(coffee.detumblr);
   }
 });
 
