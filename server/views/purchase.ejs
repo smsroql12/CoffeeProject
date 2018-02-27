@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>구매내역</title>
+</head>
+<body>
+  <h1 align = "center"> 구매완료 </h1>
+  <hr>
+  <h1 align = "center"> 구매내역 </h1>
+
+  <h2 align = "center">
+  <% for(var a in products ){
+    
+    if(products[a] != 0 ){ %>
+      <%= productsKorea[a] %> :  
+      <%= sess[a] %>
+      <br/>
+      <% }%>
+  <%} %>
+  총금액 : <%=total %>
+    </h1>
+</body>
+</html>

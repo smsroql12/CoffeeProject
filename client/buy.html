@@ -28,14 +28,14 @@
 		</div>
 	</aside>
 	<div class="login-form">
-		<form>
+		<form method="post" action="/auth/login">
 			<label>&nbsp;</label>
 			<div>
-				<input class="loginid" type="text" placeholder="ID"/>
+				<input class="loginid" type="text" placeholder="ID" name = "id"/>
 			</div>
 			<label style="font-size: 1px;">&nbsp;</label>
 			<div>
-				<input class="loginpw" type="password" placeholder="PASSWORD"/>
+				<input class="loginpw" type="password" placeholder="PASSWORD" name = "pw"/>
 			</div>
 			<label>&nbsp;</label>
 			<div>
