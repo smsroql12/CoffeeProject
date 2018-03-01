@@ -17,7 +17,10 @@ app.use(express.static(path.resolve('../client')));
 app.use(session({
   secret: '1$!%!%13513',
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 24000 * 60 * 60 // 쿠키 유효기간 24시간
+  }
 }))
 
 app.use('/',routes);

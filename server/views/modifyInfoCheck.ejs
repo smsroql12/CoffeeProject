@@ -1,16 +1,16 @@
 <!DOCTYLE HTML>
 <html>
 <head>
-<title>커피 한잔?</title>
+<title>비밀번호확인</title>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/home.css">
 <link rel="stylesheet" type="text/css" href="css/login.css">
-<link rel="stylesheet" type="text/css" href="css/generic.css">
 <link rel="stylesheet" type="text/css" href="css/contents.css">
-<link rel="stylesheet" type="text/css" href="css/js-image-slider.css">
+<link rel="stylesheet" type="text/css" href="css/sign-up.css">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="js/js-image-slider.js" type="text/javascript"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
 </head>
 
@@ -37,18 +37,16 @@
         도움말
       </a>
 		</div>
-		<div class="arrow-up">
-		</div>
 	</aside>
 	<div class="login-form">
-		<form method="post" action="/auth/login">
+		<form>
 			<label>&nbsp;</label>
 			<div>
-				<input class="loginid" type="text" placeholder="ID" name="id"/>
+				<input class="loginid" type="text" placeholder="ID"/>
 			</div>
 			<label style="font-size: 1px;">&nbsp;</label>
 			<div>
-				<input class="loginpw" type="password" placeholder="PASSWORD" name="pw"/>
+				<input class="loginpw" type="password" placeholder="PASSWORD"/>
 			</div>
 			<label>&nbsp;</label>
 			<div>
@@ -57,7 +55,7 @@
 			<label>&nbsp;</label>
 			<label>&nbsp;</label>
 			<div>
-				<a href="sign-up.html" style="text-decoration: none; position: relative; top: -6px; font-size: 16px; color: gray;">회원가입</a>&emsp;
+				<a href="#" style="text-decoration: none; position: relative; top: -6px; font-size: 16px; color: gray;">회원가입</a>&emsp;
 				<a href="#" style="text-decoration: none; position: relative; top: -6px; font-size: 16px; color: gray;">계정을 잃어버렸습니까?</a>
 			</div>
 		</form>
@@ -66,7 +64,7 @@
 </header>
 
 <nav>
-<a href=""><img src="images/coffee.png" alt="Logo" ></a>
+<a href="index.html"><img src="images/coffee.png" alt="Logo" ></a>
 <div class="nav">
 	<ul>
 		<li><a href="#">소개</a></li>
@@ -77,11 +75,11 @@
 			<a href="#">상품</a>
 		</div>
 		</li>
-		<li><a href="/buy.html">주문</a></li>
+		<li><a href="#">주문</a></li>
 		<li><a href="#">커피 이야기</a></li>
 		<li class="dropdown"><a href="#" class="dropdown-btn">마이페이지</a>
 		<div class="dropdown-menu">
-			<a href="/modifyInfoCheck">개인정보관리</a>
+			<a href="#">개인정보관리</a>
 			<a href="#">나의메뉴</a>
 			<a href="#">카드정보</a>
 			<a href="#">캐시충전</a>
@@ -92,74 +90,40 @@
 </div>
 </nav>
 
-<section>
-<div class="content-1">
+<style type="text/css">
+	body {
+		background:#F6F6F6;
+	}
 
-	<div id="left">
-		<div class="left-image">
-			<img src="images/coffeeholic.png"/>
-		</div>
-	</div>
+	.margin1 {
+		margin: 0 auto;
+		margin-left: 40%;
+		margin-top: 8%;
+	}
 
-	<div id="middle">
-		<div id="sliderFrame">
-		<div id="slider">
-            <img src="images/coffee1.jpg" alt="" />
-            <img src="images/coffee2.jpg" alt="" />
-            <img src="images/coffee3.jpg" alt="" />
-		</div>
-    	</div>
-	</div>
+	.passcheck {
+	width: 35%;
+    padding: 11px;
+    margin: 0 auto;
+    margin-left: -4%;
+    border: none;
+    background: #e7e7e7;
+    margin-bottom: 6%;
+	}
+</style>
 
-	<div id="right">
-		<div class="right-image">
-			<img src="images/coffeelove.png"/>
-		</div>
-
-		<div class="right-bottom">
-			<div class="pencil">
-				<br><br><p><h3>수익의 일부는 유기동물들을 돕기 위한 기부금으로 사용됩니다.</h3></p>
-			</div>
-			<div class="right-bottom-image">
-				<br><img src="images/cat.png" />
-			</div>
-		</div>
-	</div>
-
-</div>
+<form method="post" action="/checkPassword">
+<section style="margin: 0 auto; width: 80%; padding: 20px; margin-bottom: 10%;">
+	<p style="margin-top: 5%; margin-left: 21.5%; font-size: 2.5em;">회원정보 수정을 위해 비밀번호를 입력 해 주세요.</p>
+	<div class="margin1">
+    <label style="margin-left: 4.5%"><b style="font-size: 25px;">비밀번호 입력</b></label><br><br>
+    <input class="form-control passcheck" id="inputPw" type="password" placeholder="비밀번호 입력" name="pw" maxlength="30" minlength="6" required/><br><br>
+    </div>
+    	<button class="button" type="submit" id="sign" style="vertical-align:middle"><span>비밀번호확인</span></button>
+    	<script src="js/juso.js" type="text/javascript"></script>
+    	<script src="js/sign-up.js" type="text/javascript"></script>
 </section>
-<section class="content-2">
-	<div class="con2layout">
-	<a href="#"><div class="con2button con2button1">바로가기</div></a>
-	</div>
-</section>
-
-<section class="section-3">
-	<div class="section-3-1">
-	<div class="content3-left">
-		<a href="#"><div class="content3-first">
-			<p>여유로운 녹차 <br>한 잔을 즐기세요!</p>
-		</div></a>
-		<div class="content3-second">
-			<p>[추천메뉴] 아메리카노</p>
-			<p class="won" style="font-size: 18px; text-align: right; padding: 3pt 21pt 0 0;">Tall(355ml) &#8361;3,000</p>
-			<p class="won" style="font-size: 18px; text-align: right; padding: 3pt 21pt 0 0;">Grande(473ml) &#8361;3,700</p>
-			<a href="#"><div class="content3-button content3-button1">바로가기</div></a>
-		</div>
-	</div>
-	<div class="content3-right">
-		<a href="#"><div class="content3-third">
-			<p>친환경 제품만을 사용합니다.<br>당신의 건강을 챙기세요.</p>
-		</div></a>
-		<a href="#"><div class="content3-fourth">
-			<p>상큼한 과일과 함께!</p>
-		</div></a>
-		<a href="#"><div class="content3-fifth">
-			<p>맛있는 빵에 빠져보세요.</p>
-		</div></a>
-	</div>
-	</div>
-</section>
+</form>
 
 <footer>
 <section class="link">
