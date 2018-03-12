@@ -36,7 +36,7 @@ router.post('/login',function(req,res,next) {
       console.log(err);
     }else{
       if(rows[0] == null){
-        res.send('존재하지않는 아이디 또는 비밀번호 입니다..');
+        res.send('<script>alert("존재하지 않는 아이디 또는 비밀번호 입니다.."); location.href="/main";</script>');
       }else if(pw == rows[0].pw){
         sess.userid = rows[0].id
         sess.password = rows[0].pw;
@@ -45,7 +45,7 @@ router.post('/login',function(req,res,next) {
           res.redirect('/main');
       })
     }else{
-      res.send('입력하신 아이디 또는 비밀번호가 잘못되었습니다.');
+      res.send('<script>alert("입력하신 아이디 또는 비밀번호가 잘못되었습니다.."); location.href="/main";</script>');
     }
   }
 })

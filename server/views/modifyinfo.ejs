@@ -1,0 +1,210 @@
+<!DOCTYLE HTML>
+<html>
+<head>
+<title>회원정보수정</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../css/home.css">
+<link rel="stylesheet" type="text/css" href="../css/login.css">
+<link rel="stylesheet" type="text/css" href="../css/generic.css">
+<link rel="stylesheet" type="text/css" href="../css/contents.css">
+<link rel="stylesheet" type="text/css" href="../css/js-image-slider.css">
+<link rel="stylesheet" type="text/css" href="../css/sign-up.css">
+<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css">
+<link rel="stylesheet" type="text/css" href="../css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script src="../js/js-image-slider.js" type="text/javascript"></script>
+<script src="../js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="../js/datepicker-ko.js" type="text/javascript"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript" src="../js/login.js"></script>
+</head>
+
+<body>
+<header>
+	<section class="nav-container">
+	<aside class="menu">
+		<div class="menu-content">
+      <%
+          if(sess == null){ %>
+            <a href="#" id="login">
+                <i class="fa fa-unlock-alt"></i>
+                Login
+              </a>   
+          <%
+        } %> 
+        <%if(sess != null){%>
+          <a href="/auth/logout">로그인 완료 <%= sess %> (로그아웃) <a>
+        <% }%>
+
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="#">
+        <i class="fa fa-question-circle"></i>
+        도움말
+      </a>
+		</div>
+		<div class="arrow-up">
+		</div>
+	</aside>
+	<div class="login-form">
+		<form>
+			<label>&nbsp;</label>
+			<div>
+				<input class="loginid" type="text" placeholder="ID"/>
+			</div>
+			<label style="font-size: 1px;">&nbsp;</label>
+			<div>
+				<input class="loginpw" type="password" placeholder="PASSWORD"/>
+			</div>
+			<label>&nbsp;</label>
+			<div>
+				<input class="loginsubmit" type="submit" value="Login"/>
+			</div>
+			<label>&nbsp;</label>
+			<label>&nbsp;</label>
+			<div>
+				<a href="#" style="text-decoration: none; position: relative; top: -6px; font-size: 16px; color: gray;">회원가입</a>&emsp;
+				<a href="#" style="text-decoration: none; position: relative; top: -6px; font-size: 16px; color: gray;">계정을 잃어버렸습니까?</a>
+			</div>
+		</form>
+	</div>
+	</section>
+</header>
+
+<nav>
+<a href="index.html"><img src="../images/coffee.png" alt="Logo" ></a>
+<div class="nav">
+	<ul>
+		<li><a href="#">소개</a></li>
+		<li class="dropdown"><a href="#" class="dropdown-btn">메뉴</a>
+		<div class="dropdown-menu">
+			<a href="#">음료</a>
+			<a href="#">베이커리</a>
+			<a href="#">상품</a>
+		</div>
+		</li>
+		<li><a href="#">주문</a></li>
+		<li><a href="#">커피 이야기</a></li>
+		<li class="dropdown"><a href="#" class="dropdown-btn">마이페이지</a>
+		<div class="dropdown-menu">
+			<a href="#">개인정보관리</a>
+			<a href="#">나의메뉴</a>
+			<a href="#">카드정보</a>
+			<a href="#">캐시충전</a>
+		</div>
+		</li>
+		<li><a href="#">이벤트</a></li>
+	</ul>
+</div>
+</nav>
+
+<section>
+	<form id="info" style="border:1px solid #ccc" method="post" action="/modify/modifyInfo">
+		<div class="container">
+    <h1>회원정보수정</h1>
+    <p>회원정보를 수정합니다.</p>
+    <hr>
+    <h2>비밀번호 수정</h2><br><br>
+    <label for="pw"><b>새 비밀번호</b></label><br>
+    <input class="form-control password" id="inputPw" type="password" placeholder="새 비밀번호 입력" name="pw" maxlength="30" minlength="6"/>
+    <label class="warn2"></label><br>
+
+    <label for="pwCheck"><b>새 비밀번호 확인</b></label><br>
+    <input class="form-control password" id="inputPwr" type="password" placeholder="새 비밀번호 재입력" name="pwCheck" maxlength="30" minlength="6"/>
+    <label class="warn3"></label><br>
+
+    <hr>
+    <h2>개인정보 수정</h2><br><br>
+    <label for="email"><b>이메일</b></label><br>
+    <input id="email" class="text" type="text" placeholder="" name="emailF" style="width: 15%"/>&nbsp;&nbsp;@&nbsp;
+    <input type="text" class="text" name="emailB" value="" ReadOnly="true" style="width: 15%"/>
+	<select name="emailS" class="text" onchange="SetEmailTail(emailCheck.options[this.selectedIndex].value)">
+    <option value="notSelected" >::선택하세요::</option>
+    <option value="naver.com">naver.com</option>
+    <option value="daum.net">daum.net</option>
+    <option value="yahoo.com">yahoo.com</option>
+    <option value="nate.com">nate.com</option>
+    <option value="gmail.com">gmail.com</option>
+    <option value="hanmail.net">hanmail.net</option>
+    <option value="msn.com">msn.com</option>
+    <option value="etc">직접입력</option>
+   </select><br>
+
+   <label for="name"><b>이름</b></label><br>
+    <input id="name" class="text" type="text" placeholder="이름" name="name" style="width: 15%"/><br>
+    <label for="gender"><b>성별</b></label><br>
+    <input type="radio" name="gender" value="남성" checked="checked">남성
+    <input type="radio" name="gender" value="여성">여성
+    <input type="radio" name="gender" value="기타">기타<br><br>
+    <label for="day"><b>생년월일</b></label><br>
+    <input type="text" class="text" readonly="true" id="date1" placeholder="클릭해주세요." name = "date" style="width: 15%" /><br>
+    <label for="cellPhone"><b>핸드폰 번호</b></label><br>
+    <input id="cellPhone" class="phone text" type="text" placeholder="숫자만 입력 가능합니다." name="phone" maxlength="13" style="width: 15%"/>&nbsp;<br>
+    </label>
+
+    <label for="address"><b>주소</b></label><br>
+
+    <input type="text" class="text" readonly="true" id="sample2_postcode" name="postNum" placeholder="우편번호"/>
+	<input type="button" class="adbutton" onclick="sample2_execDaumPostcode()" value="우편번호 찾기"><br>
+	<input type="text" class="text" readonly="true" id="sample2_newaddress" name="addressN" placeholder="도로명주소" style="width: 25%"/>
+	<input type="text" class="text" readonly="true" id="sample2_address" name="addressO" placeholder="지번주소" style="width: 25%" /><br> 
+	<input type="text" class="text" id="address" name="addressD" placeholder="상세주소입력" style="width: 25%" />
+
+<!-- iOS에서는 position:fixed 버그가 있음, 적용하는 사이트에 맞게 position:absolute 등을 이용하여 top,left값 조정 필요 -->
+<div id="layer" style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
+<img src="//t1.daumcdn.net/localimg/localimages/07/postcode/320/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
+</div>
+
+	<br>
+    <hr>
+    <p><h4>개인정보중 이름, 성별, 생일 항목은 <u>3개월에 1번 수정 가능</u>하니 참고 해 주세요.<br><br>정보를 수정하신 뒤, 아래 '회원정보수정' 버튼을 클릭하시면 회원정보가 수정됩니다.<h4><br></p><br>
+    	<button class="button" type="submit" id="sign" style="vertical-align:middle"><span>회원정보수정</span></button>
+    	<script src="js/juso.js" type="text/javascript"></script>
+    	<script src="js/sign-up.js" type="text/javascript"></script>
+</form>
+</section>
+
+<footer>
+<section class="link">
+<div class="footer-logo">
+	<img src="images/footerlogo.png" alt="Footer Logo" />
+	<p>ⓒSince 2018 Coffee All right reserved.</p>
+</div>
+<div class="footer-link">
+	<h3><b>커피한잔</b></h3>
+	<p><a href="#">커피한잔은?</a><br>
+	<a href="#">메뉴</a><br>
+	<a href="#">상품개발</a><br>
+	<a href="#">이야기</a></p>
+</div>
+<div class="footer-link">
+	<h3><b>활동</b></h3></a>
+	<p><a href="#">커피한잔의 주력 활동</a><br>
+	<a href="#">유기동물 보호</a><br>
+	<a href="#">친환경 커피</a><br>
+	<a href="#">이벤트</a><br>
+	<a href="#">스토어</a><br>
+	<a href="#">갤러리</a></p><br>
+</div>
+<div class="footer-link">
+	<h3><b>회사 소식</b></h3>
+	<p><a href="#">대표 인사말</a><br>
+	<a href="#">회사 임원단</a><br>
+	<a href="#">운영 노트</a><br>
+	<a href="#">회사 갤러리</a></p>
+</div>
+<div class="footer-link">
+	<h3><b>지원</b></h3>
+	<p><a href="#">고객센터</a><br>
+	<a href="#">다운로드</a><br>
+</div>
+</section>
+<hr style="border-color: #c9c8c8; color: #c9c8c8; background-color: #c9c8c8; width: 70%;">
+<div class="last">
+<a href="#">관리자 페이지</a> <label style="color: #e9e8e8">/</label> <a href="#">개발 지침</a>
+</div><br>
+</footer>
+</body>
+</html>

@@ -7,7 +7,8 @@ var app = express();
 
 var routes = require('./routes/index.js');
 var auth = require('./routes/auth.js');
-
+var modify = require('./routes/modify.js');
+var shop = require('./routes/shop.js')
 //view engine setup
 app.set('views','./views');
 app.set('view engine','ejs');
@@ -25,6 +26,9 @@ app.use(session({
 
 app.use('/',routes);
 app.use('/auth',auth);
+app.use('/modify',modify);
+app.use('/shop',shop);
+
 app.locals.pretty = true;
 
 // 3000 번 리스닝

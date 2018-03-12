@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    #tableDiv{
+      margin: 0 auto;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+    <%
+    var DBString = ["id","pw","name","dateOfbirth","email","gender","phone","postNum","addressN","addressO","addressD"];
+    var colString = ["아이디","비밀번호","이름","생년월일","이메일","성별","연락처","우편주소","신주소","구주소","상세주소"];
+    %>
+
+    <div id = "tableDiv">
+    <table border="1">
+      
+    <% for(var i = 0 ; i< DBString.length; i++){ %>
+      <tr>
+        <td>
+          <%=colString[i] %>
+        </td>
+        <td>
+            <%=rows[0][DBString[i]] %>
+        </td>
+      </tr>
+    <%} %>
+    </table>
+  </div>
+</body>
+</html>
