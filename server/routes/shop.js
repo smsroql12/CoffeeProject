@@ -13,6 +13,17 @@ var conn = mysql.createConnection({
 var app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 
+router.get('/buy',function(req,res,next){
+  var sess = req.session;
+  if(sess.userid == null){
+    res.send('<script>alert("로그인을해주세요"); location.href="/main";</script>');
+  }else{
+    res.render('buy',{
+      sess:sess.userid
+     });  
+  }
+})
+
 router.post('/purchase',function(req,res,next) {
   var reqb = req.body;
 

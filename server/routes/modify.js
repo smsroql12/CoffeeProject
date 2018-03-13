@@ -20,7 +20,7 @@ router.get('/modifyInfoCheck',function(req,res,next) {
     res.send('<script>alert("로그인을해주세요"); location.href="/main";</script>');
   }else{
     res.render('modifyInfoCheck',{
-      sess : req.session.userid
+      sess : sess.userid
      });  
   }
 });
@@ -80,7 +80,6 @@ router.post('/modifyInfo',function(req,res,next) {
       modifys[i] = rows[0][DBString[i]];
       console.log("기존 유저 정보 : " + modifys[i]);
     }
-    // 문제없음
     console.log("----------------------------------------------");
     console.log(" ");
     var _password = req.body.pw;     

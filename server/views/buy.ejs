@@ -3,17 +3,17 @@
 <head>
 <title>주문하기</title>
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="css/home.css">
-<link rel="stylesheet" type="text/css" href="css/login.css">
-<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
-<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="css/heartstyle.css">
+<link rel="stylesheet" type="text/css" href="../css/home.css">
+<link rel="stylesheet" type="text/css" href="../css/login.css">
+<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css">
+<link rel="stylesheet" type="text/css" href="../css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="../css/heartstyle.css">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="css/buy.css">
+<link rel="stylesheet" type="text/css" href="../css/buy.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="../js/jquery-ui.min.js" type="text/javascript"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="../js/login.js"></script>
 </head>
 
 <body>
@@ -21,8 +21,23 @@
 	<section class="nav-container">
 	<aside class="menu">
 		<div class="menu-content">
+      <%
+          if(sess == null){ %>
+            <a href="#" id="login">
+                <i class="fa fa-unlock-alt"></i>
+                Login
+              </a>   
+          <%
+        } %> 
+        <%if(sess != null){%>
+          <a href="/auth/logout">로그인 완료 <%= sess %> (로그아웃) <a>
+        <% }%>
 
-			<a href="#" id="login"><i class="fa fa-unlock-alt"></i>Login</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#"><i class="fa fa-question-circle"></i>도움말</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="#">
+        <i class="fa fa-question-circle"></i>
+        도움말
+      </a>
 		</div>
 		<div class="arrow-up">
 		</div>
@@ -53,7 +68,7 @@
 </header>
 
 <nav>
-<a href="index.html"><img src="images/coffee.png" alt="Logo" ></a>
+<a href="/main"><img src="../images/coffee.png" alt="Logo" ></a>
 <div class="nav">
 	<ul>
 		<li><a href="#">소개</a></li>
@@ -90,7 +105,7 @@
             <li class="product" data-price="3000" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/americano1.png" />
+                        <img class="image" src="../images/americano1.png" />
                     </div>
                     <div class="product-paper">
                         <div class="product-name">
@@ -119,7 +134,7 @@
             <li class="product" data-price="3500" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/cafelatte.png" />
+                        <img class="image" src="../images/cafelatte.png" />
                     </div>
                     <div class="product-paper">
                         <div class="product-name">
@@ -148,7 +163,7 @@
             <li class="product" data-price="3500" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/cappuccino.png" />
+                        <img class="image" src="../images/cappuccino.png" />
                     </div>
                     <div class="product-paper">
                         <div class="product-name">
@@ -177,7 +192,7 @@
             <li class="product" data-price="4000" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/cafemoca.png" />
+                        <img class="image" src="../images/cafemoca.png" />
                     </div>
                     <div class="product-paper">
                         <div class="product-name">
@@ -206,7 +221,7 @@
             <li class="product" data-price="3500" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/espresso.png" />
+                        <img class="image" src="../images/espresso.png" />
                     </div>
                     <div class="product-paper">
                         <div class="product-name">
@@ -235,7 +250,7 @@
             <li class="product" data-price="4500" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/chocolatemoca.png" />
+                        <img class="image" src="../images/chocolatemoca.png" />
                     </div>
                     <div class="product-paper">
                         <div style="font-size: 16px;" class="product-name">
@@ -264,7 +279,7 @@
             <li class="product" data-price="4500" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/makiyaddo.png" />
+                        <img class="image" src="../images/makiyaddo.png" />
                     </div>
                     <div class="product-paper">
                         <div class="product-name" style="font-size: 19px;">
@@ -293,7 +308,7 @@
             <li class="product" data-price="5000" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/greentea2.png" />
+                        <img class="image" src="../images/greentea2.png" />
                     </div>
                     <div class="product-paper">
                         <div class="product-name" style="font-size: 16px;">
@@ -322,7 +337,7 @@
             <li class="product" data-price="4500" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/mango.png" />
+                        <img class="image" src="../images/mango.png" />
                     </div>
                     <div class="product-paper">
                         <div class="product-name" style="font-size: 15px;">
@@ -351,7 +366,7 @@
             <li class="product" data-price="4500" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/strawberry.png" />
+                        <img class="image" src="../images/strawberry.png" />
                     </div>
                     <div class="product-paper">
                         <div class="product-name" style="font-size: 15px;">
@@ -388,7 +403,7 @@
             <li class="product" data-price="6200" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/bake1.png" />
+                        <img class="image" src="../images/bake1.png" />
                     </div>
                     <div class="product-paper">
                         <div class="product-name">
@@ -417,7 +432,7 @@
             <li class="product" data-price="3800" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/bake2.png" />
+                        <img class="image" src="../images/bake2.png" />
                     </div>
                     <div class="product-paper">
                         <div class="product-name">
@@ -446,7 +461,7 @@
             <li class="product" data-price="7900" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/bake3.png" />
+                        <img class="image" src="../images/bake3.png" />
                     </div>
                     <div class="product-paper">
                         <div class="product-name" style="font-size: 18px;">
@@ -475,7 +490,7 @@
             <li class="product" data-price="2000" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/bake4.png" />
+                        <img class="image" src="../images/bake4.png" />
                     </div>
                     <div class="product-paper">
                         <div class="product-name">
@@ -504,7 +519,7 @@
             <li class="product" data-price="5000" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/bake5.png" />
+                        <img class="image" src="../images/bake5.png" />
                     </div>
                     <div class="product-paper">
                         <div class="product-name" style="font-size: 18px;">
@@ -541,7 +556,7 @@
             <li class="product" data-price="12800" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/tumblrer1.png" />
+                        <img class="image" src="../images/tumblrer1.png" />
                     </div>
                     <div class="product-paper">
                         <div class="product-name" style="font-size: 16px;">
@@ -570,7 +585,7 @@
             <li class="product" data-price="11900" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/tumblrer2.png" />
+                        <img class="image" src="../images/tumblrer2.png" />
                     </div>
                     <div class="product-paper">
                         <div class="product-name" style="font-size: 15px;">
@@ -599,7 +614,7 @@
             <li class="product" data-price="14900" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/tumblrer3.png" />
+                        <img class="image" src="../images/tumblrer3.png" />
                     </div>
                     <div class="product-paper">
                         <div class="product-name" style="font-size: 15px;">
@@ -628,7 +643,7 @@
             <li class="product" data-price="25000" data-quantity="0">
                 <div class="product-preview">
                     <div class="thumbnail">
-                        <img class="image" src="images/french.png"/>
+                        <img class="image" src="../images/french.png"/>
                     </div>
                     <div class="product-paper">
                         <div class="product-name" style="font-size: 15px;">
@@ -694,11 +709,11 @@
 </section><br>
 
     </form>
-<script type="text/javascript" src="js/buy.js"></script>
+<script type="text/javascript" src="../js/buy.js"></script>
 <footer>
 <section class="link">
 <div class="footer-logo">
-	<img src="images/footerlogo.png" alt="Footer Logo" />
+	<img src="../images/footerlogo.png" alt="Footer Logo" />
 	<p>ⓒSince 2018 Coffee All right reserved.</p>
 </div>
 <div class="footer-link">
